@@ -4,7 +4,6 @@ public abstract class Livro{
     private String autor;
     private double preco;
     //constructor
-    public Livro(){}
     public Livro(String titulo, String autor, double preco){
         this.titulo = titulo;
         this.autor = autor;
