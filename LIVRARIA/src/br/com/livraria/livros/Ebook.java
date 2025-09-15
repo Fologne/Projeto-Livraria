@@ -4,6 +4,7 @@ public class Ebook extends Livro implements Vendavel{
     private double tamanhoArquivo;
     private String formato;
     //constructor
+    public Ebook(){}
     public Ebook(String titulo, String autor, double preco, double tamanhoArquivo, String formato){
         super(titulo, autor, preco);
         this.tamanhoArquivo = tamanhoArquivo;
@@ -18,7 +19,6 @@ public class Ebook extends Livro implements Vendavel{
     //methods
     @Override
     public boolean vender(){
-        System.out.println("Venda bem sucedida");
         return true;
     }
 }

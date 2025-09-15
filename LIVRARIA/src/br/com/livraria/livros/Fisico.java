@@ -4,6 +4,7 @@ public class Fisico extends Livro implements Vendavel{
     private double peso;
     private int estoque;
     //constructor
+    public Fisico(){}
     public Fisico(String titulo, String autor, double preco, double peso, int estoque){
         super(titulo, autor, preco);
         this.peso = peso;
@@ -24,10 +25,8 @@ public class Fisico extends Livro implements Vendavel{
     public boolean vender(){
         if (this.estoque > 0){
             this.estoque--;
-            System.out.println("Venda bem sucedida");
             return true;
         }else{
-            System.out.println("Venda impossibilitada, estoque igual a 0");
             return false;
         }
     }
