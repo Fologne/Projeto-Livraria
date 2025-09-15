@@ -1,5 +1,6 @@
 package br.com.livraria.livros;
-public class Ebook extends Livro{
+import br.com.livraria.util.Vendavel;
+public class Ebook extends Livro implements Vendavel{
     private double tamanhoArquivo;
     private String formato;
     //constructor
@@ -14,4 +15,10 @@ public class Ebook extends Livro{
     //getters
     public double getTamanhoArquivo(){return tamanhoArquivo;}
     public String getFormato(){return formato;}
+    //methods
+    @Override
+    public boolean vender(){
+        System.out.println("Venda bem sucedida");
+        return true;
+    }
 }

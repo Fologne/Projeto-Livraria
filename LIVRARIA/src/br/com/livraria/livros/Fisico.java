@@ -1,5 +1,6 @@
 package br.com.livraria.livros;
-public class Fisico extends Livro{
+import br.com.livraria.util.Vendavel;
+public class Fisico extends Livro implements Vendavel{
     private double peso;
     private int estoque;
     //constructor
@@ -18,5 +19,16 @@ public class Fisico extends Livro{
     public double calcularDesconto(){
         double desconto = this.peso * 0.5;
         return desconto;
+    }
+    @Override
+    public boolean vender(){
+        if (this.estoque > 0){
+            this.estoque--;
+            System.out.println("Venda bem sucedida");
+            return true;
+        }else{
+            System.out.println("Venda impossibilitada, estoque igual a 0");
+            return false;
+        }
     }
 }
