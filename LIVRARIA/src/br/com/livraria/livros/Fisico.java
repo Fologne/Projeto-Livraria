@@ -18,8 +18,11 @@ public class Fisico extends Livro implements Vendavel{
     public int getEstoque(){return estoque;}
     //methods
     public double calcularDesconto(){
-        double desconto = this.peso * 0.5;
-        return desconto;
+        if (this.peso < 0.8){
+            return 10;
+        }else{
+            return 5;
+        }
     }
     @Override
     public boolean vender(){

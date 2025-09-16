@@ -16,10 +16,11 @@ public class Main{
                     do{
                         escolha = Teclado.LerInteiro("Digite\n1 para cadastrar um livro fisico\n2 para cadastrar um ebook\n0 para sair");
                         switch(escolha){
-                            case 1://feito
+                            case 1:
                                 cadastroFisico(fisico);
                                 break;
-                            case 2://não feito
+                            case 2:
+                                cadastroEbook(ebook);
                                 break;
                             case 0:
                                 System.out.println("Voltando ao menu...");
@@ -41,7 +42,6 @@ public class Main{
         }while(escolha != 0);
     }
     public static void cadastroFisico(ArrayList <Fisico> fisico){
-        //titulo autor preco peso estoque
         String titulo = Teclado.LerString("Digite o titulo do livro");
         String autor = Teclado.LerString("Digite o nome do autor do livro");
         double preco, peso;
@@ -79,5 +79,35 @@ public class Main{
         }
         Fisico novo = new Fisico(titulo, autor,preco,peso,estoque);
         fisico.add(novo);
+    }
+    public static void cadastroEbook(ArrayList <Ebook> ebook){
+        String titulo = Teclado.LerString("Digite o titulo do livro");
+        String autor = Teclado.LerString("Digite o nome do autor do livro");
+        double preco, tamanho;
+        while(true){//preco
+            String s = Teclado.LerString("Digite o preco do livro (ex: 39,90):").replace(",", ".").trim();
+            try{
+                preco = Double.parseDouble(s);
+                Ebook livro = new Ebook();
+                livro.setPreco(preco);
+                break;
+            }catch(NumberFormatException e){
+                System.out.println("Preço inválido");
+            }catch(PrecoInvalidoException e){
+                System.out.println("Erro: " + e.getMessage());
+            }
+        }
+        while(true){//tamanho
+            String s = Teclado.LerString("Digite o tamanho do arquivo do livro em MB (ex: 25)").replace(",", ".").trim();
+            try{
+                tamanho = Double.parseDouble(s);
+                break;
+            }catch(NumberFormatException e){
+                System.out.println("Tamanho inválido");
+            }
+        }
+        String formato = Teclado.LerString("Digite o formato do livro (ex: PDF)");
+        Ebook novo = new Ebook(titulo, autor, preco, tamanho, formato);
+        ebook.add(novo);
     }
 }
