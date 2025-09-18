@@ -27,9 +27,12 @@ public class Fisico extends Livro implements Vendavel{
     @Override
     public boolean vender(){
         if (this.estoque > 0){
+            System.out.println("Venda concluída com sucesso");
             this.estoque--;
+            System.out.println(getEstoque());
             return true;
         }else{
+            System.out.println("Venda negada, estoque igual a 0");
             return false;
         }
     }

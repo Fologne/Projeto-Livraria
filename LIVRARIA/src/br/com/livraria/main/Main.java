@@ -4,6 +4,7 @@ import br.com.livraria.exceptions.PrecoInvalidoException;
 import br.com.livraria.util.Teclado;
 
 import java.util.ArrayList;
+import java.util.Objects;
 public class Main{
     public static void main(String[] args){
         ArrayList <Fisico> fisico = new ArrayList<>();
@@ -29,7 +30,8 @@ public class Main{
                     }while(escolha != 0);
                     escolha = 1;
                     break;
-                case 2://venda = não feito
+                case 2:
+                    venda(fisico, ebook);
                     break;
                 case 3://listagem = não feito
                     break;
@@ -109,5 +111,31 @@ public class Main{
         String formato = Teclado.LerString("Digite o formato do livro (ex: PDF)");
         Ebook novo = new Ebook(titulo, autor, preco, tamanho, formato);
         ebook.add(novo);
+    }
+    public static void venda(ArrayList <Fisico> fisico, ArrayList <Ebook> ebook){
+        int escolha;
+        do{
+            escolha = Teclado.LerInteiro("Digite\n1 para vender um livro fisico\n2 para vender um ebook\n0 para voltar");
+            switch(escolha){
+                case 1:
+                    vFisico(fisico);
+                    break;
+                case 2:
+                    break;
+                case 0:
+                    System.out.println("Saindo...");
+                    break;
+            }
+        }while(escolha != 0);
+    }
+    public static void vFisico(ArrayList <Fisico> fisico){
+        String nome = Teclado.LerString("Digite o nome do livro que deseja vender");
+        for(int i = 0; i < fisico.size(); i++){
+            if(Objects.equals(fisico.get(i).getTitulo(), nome)){
+                fisico.get(i).vender();
+                return;
+            }
+        }
+        System.out.println("Não foi achado um livro com esse nome");
     }
 }

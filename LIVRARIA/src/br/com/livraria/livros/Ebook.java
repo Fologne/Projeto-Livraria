@@ -19,6 +19,7 @@ public class Ebook extends Livro implements Vendavel{
     //methods
     @Override
     public boolean vender(){
+        System.out.println("Venda concluída com sucesso");
         return true;
     }
 }
