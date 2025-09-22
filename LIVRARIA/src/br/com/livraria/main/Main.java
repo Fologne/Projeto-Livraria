@@ -37,6 +37,7 @@ public class Main{
                     listagem(fisico, ebook);
                     break;
                 case 4://aumento de estoque = não feito
+                    aEstoque(fisico);
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -160,6 +161,16 @@ public class Main{
         for(int i = 0; i < ebook.size(); i++){
             System.out.println("Titulo: " + ebook.get(i).getTitulo() + "\nAutor: " + ebook.get(i).getAutor() + "\nPreço: " + ebook.get(i).getPreco());
             System.out.println("Tamanho do arquivo: " + ebook.get(i).getTamanhoArquivo() + "\nFormato: " + ebook.get(i).getFormato());
+        }
+    }
+    public static void aEstoque(ArrayList <Fisico> fisico){
+        String nome = Teclado.LerString("Digite o nome do livro que deseja aumentar o estoque");
+        for(int i = 0; i < fisico.size(); i++){
+            if(Objects.equals(nome, fisico.get(i).getTitulo())){
+                int aumento = Teclado.LerInteiro("Digite o aumento do estoque do livro");
+                fisico.get(i).aumento(aumento);
+                System.out.println("Estoque aumentado");
+            }
         }
     }
 }

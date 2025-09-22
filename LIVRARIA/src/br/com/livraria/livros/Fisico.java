@@ -36,4 +36,7 @@ public class Fisico extends Livro implements Vendavel{
             return false;
         }
     }
+    public void aumento(int aumento){
+        this.estoque += aumento;
+    }
 }
