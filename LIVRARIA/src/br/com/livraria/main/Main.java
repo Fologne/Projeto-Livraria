@@ -121,6 +121,7 @@ public class Main{
                     vFisico(fisico);
                     break;
                 case 2:
+                    vEbook(ebook);
                     break;
                 case 0:
                     System.out.println("Saindo...");
@@ -133,6 +134,16 @@ public class Main{
         for(int i = 0; i < fisico.size(); i++){
             if(Objects.equals(fisico.get(i).getTitulo(), nome)){
                 fisico.get(i).vender();
+                return;
+            }
+        }
+        System.out.println("Não foi achado um livro com esse nome");
+    }
+    public static void vEbook(ArrayList <Ebook> ebook){
+        String nome = Teclado.LerString("Digite o nome do ebook que deseja vender");
+        for(int i = 0; i < ebook.size(); i++){
+            if(Objects.equals(ebook.get(i).getTitulo(), nome)){
+                ebook.get(i).vender();
                 return;
             }
         }
