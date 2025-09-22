@@ -34,6 +34,7 @@ public class Main{
                     venda(fisico, ebook);
                     break;
                 case 3://listagem = não feito
+                    listagem(fisico, ebook);
                     break;
                 case 4://aumento de estoque = não feito
                     break;
@@ -148,5 +149,17 @@ public class Main{
             }
         }
         System.out.println("Não foi achado um livro com esse nome");
+    }
+    public static void listagem(ArrayList <Fisico> fisico, ArrayList <Ebook> ebook){
+        System.out.println("Livros fisicos:");
+        for(int i = 0; i < fisico.size(); i++){
+            System.out.println("Titulo: " + fisico.get(i).getTitulo() + "\nAutor: " + fisico.get(i).getAutor() + "\nPreço: " + fisico.get(i).getPreco());
+            System.out.println("Peso: " + fisico.get(i).getPeso() + "\nEstoque: " + fisico.get(i).getEstoque() + "\n");
+        }
+        System.out.println("Livros digitais (Ebook):");
+        for(int i = 0; i < ebook.size(); i++){
+            System.out.println("Titulo: " + ebook.get(i).getTitulo() + "\nAutor: " + ebook.get(i).getAutor() + "\nPreço: " + ebook.get(i).getPreco());
+            System.out.println("Tamanho do arquivo: " + ebook.get(i).getTamanhoArquivo() + "\nFormato: " + ebook.get(i).getFormato());
+        }
     }
 }
