@@ -13,7 +13,7 @@ public class Main{
         do{
             escolha = Teclado.LerInteiro("Digite\n1 para cadastrar um livro\n2 para realizar uma venda\n3 para listar livros cadastrados\n4 para aumentar o estoque de um livro\n0 para sair");
             switch(escolha){
-                case 1://cadastro = não feito
+                case 1:
                     do{
                         escolha = Teclado.LerInteiro("Digite\n1 para cadastrar um livro fisico\n2 para cadastrar um ebook\n0 para sair");
                         switch(escolha){
@@ -33,10 +33,10 @@ public class Main{
                 case 2:
                     venda(fisico, ebook);
                     break;
-                case 3://listagem = não feito
+                case 3:
                     listagem(fisico, ebook);
                     break;
-                case 4://aumento de estoque = não feito
+                case 4:
                     aEstoque(fisico);
                     break;
                 case 0:
