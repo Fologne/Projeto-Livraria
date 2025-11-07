@@ -16,3 +16,8 @@ O sistema oferece as seguintes operações:
 | 🛒 **Vender Livro** | Reduz o estoque de um livro físico ou registra a venda de um livro digital. |
 | 📋 **Listar Livros** | Exibe todos os livros cadastrados (físicos e digitais), mostrando seus detalhes. |
 | 🔼 **Aumentar Estoque** | Permite repor o estoque de um livro físico. |
+
+
+**[Gabriel Foloni](https://github.com/gabrielfoloni)**
+
+Projeto desenvolvido para fins acadêmicos.
